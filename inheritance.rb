@@ -1,3 +1,11 @@
+module SuperPowers
+  attr_accessor :magic_points
+  def batmobile
+    p "vrroooooommmm!"
+  end
+end
+
+
 class Animal
   attr_reader :legs, :warm_blood, :skin_type
   def initialize (legs=4, warm_blood=true, skin_type="fur")
@@ -12,7 +20,6 @@ class Amphibian < Animal
   def initialize
     super(4, false, "membrane")
   end
-
 end
 
 
@@ -20,14 +27,12 @@ class Frog < Amphibian
   def initialize
     super
   end
-
 end
 
 
 class Mammal < Animal
   def initialize(legs=4)
     super(legs, true, "fur")
-
   end
 end
 
@@ -40,10 +45,10 @@ end
 
 
 class Bat < Mammal
+  include SuperPowers
   def initialize(legs=4)
     super(legs)
   end
-
 end
 
 
@@ -51,7 +56,6 @@ class Chimpanzee < Primate
   def initialize
     super
   end
-
 end
 
 
@@ -80,4 +84,7 @@ alex = Amphibian.new
 p alex.skin_type == "membrane"
 p alex.inspect
 
+batman.batmobile
 
+batman.magic_points = 23
+p batman.inspect
