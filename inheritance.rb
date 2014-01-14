@@ -1,3 +1,13 @@
+module SuperPowers
+  def telekinesis
+    "Eli is moved, by your awesome powers!"
+  end
+
+  def real_life_recurion
+    "Recursion...Recursion...Recursion"
+  end
+end
+
 class Animal
   attr_reader :blood_type, :birth_process, :locomotion, :name
   attr_accessor :dna_relation_to_humans
@@ -35,6 +45,8 @@ class Amphibian < Animal
 end
 
 class Primate < Mammal
+  include SuperPowers
+
   def initialize(name, blood_type, birth_process, locomotion, *specifics)
     super
     @dna_relation_to_humans = specifics[0]
@@ -73,3 +85,5 @@ batty = Bat.new("batty", "warm", "live", "fly")
 p batty.fly
 chimp = Chimpanzee.new("Chimpy", "warm", "live", "walk")
 p chimp.throw_feces
+p chimp.telekinesis
+p chimp.real_life_recurion
