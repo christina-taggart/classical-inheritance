@@ -8,7 +8,7 @@ class Animal
 end
 
 class Mammal < Animal
-  initialize
+  def initialize
     @num_of_limbs = 4
   end
   def has_hair?
@@ -24,15 +24,25 @@ class Amphibian < Animal
 end
 
 class Primate < Mammal
+  def opposable_thumbs?
+    true
+  end
 end
 
 class Frog < Amphibian
 end
 
 class Bat < Mammal
+  def fly?
+    true
+  end
+  def sonar?
+    true
+  end
 end
 
 class Chimpanzee < Mammal
 end
 
 p Amphibian.new.warm_blooded?
+p Chimpanzee.new.breathes
