@@ -1,4 +1,7 @@
+require_relative 'SuperPowers.rb'
+
 class Animal
+  include SuperPowers
   attr_accessor :name, :habitat, :mating_ritual, :temperament, :warm_blooded
   def initialize(name, habitat, mating_ritual, temperament, warm_blooded)
     @name = name
@@ -74,3 +77,4 @@ p sloth = Mammal.new("sloth", "jungle", "upside-down", "chill")
 p newt = Amphibian.new("newt", "river", "kinky", "shy")
 p orangutan = Primate.new("orangutan", "rainforest", "polygamy", "intelligent")
 p dunston = Chimp.new("Dunston", "city", "celebate", "comical")
+dunston.use_xray_vision
